@@ -22,8 +22,10 @@ export const Filters = () => {
   const [isBirthClicked, setIsBirthClicked] = useState(false);
   const [isArchiveClicked, setIsArchiveClicked] = useState(false);
   const [isRoleClicked, setIsRoleClicked] = useState(false);
-  const [isNameFilterSelected, setIsNameFilterSelected] = useState("По умолчанию");
-  const [isBirthFilterSelected, setIsBirthFilterSelected] = useState("По умолчанию");
+  const [isNameFilterSelected, setIsNameFilterSelected] =
+    useState("По умолчанию");
+  const [isBirthFilterSelected, setIsBirthFilterSelected] =
+    useState("По умолчанию");
 
   const handleSortByName = ({ filter }) => {
     if (filter === "По умолчанию") {
