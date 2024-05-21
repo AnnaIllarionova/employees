@@ -1,3 +1,4 @@
+import { Link, Outlet } from "react-router-dom";
 import { EmployeesList } from "../../components/employees-list/employees-list";
 import { Filters } from "../../components/filters/filters";
 import { useGetAllEmployeesQuery } from "../../services/api";
@@ -14,6 +15,10 @@ export const MainPage = () => {
         isLoading={isLoading}
         error={error}
       />
+      <Link to="/add">
+      <button className="main__add">Добавить сотрудника</button>
+      </Link>
+      <Outlet />
     </div>
   );
 };
