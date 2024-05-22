@@ -6,13 +6,20 @@ import {
 } from "../../services/api";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { updateEmployee } from "../../services/slices";
 
 export const ChangeEmployee = () => {
   const currentId = useParams();
-  const { data, isLoading, error } = useGetCurrentEmployeeQuery({
+  const {
+    data,
+    isLoading,
+    error,
+    refetch: currentEmployeeRefetch,
+  } = useGetCurrentEmployeeQuery({
     id: currentId.currentId,
   });
-  console.log(data && data);
+
   const { refetch } = useGetAllEmployeesQuery();
   const [employeeName, setEmployeeName] = useState("");
   const [employeePhone, setEmployeePhone] = useState("");
@@ -20,6 +27,7 @@ export const ChangeEmployee = () => {
   const [employeeRole, setEmployeeRole] = useState("");
   const [employeeInArchive, setEmployeeInArchive] = useState(false);
   const [isChanged, setIsChanged] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (data && data.birthday) {
@@ -43,8 +51,6 @@ export const ChangeEmployee = () => {
   const [changeEmployee, { isLoading: changesLoading, error: changesError }] =
     useChangeEmployeeMutation();
   const navigate = useNavigate();
-  console.log("error", error);
-  console.log("changesError", changesError);
 
   const onSubmit = async () => {
     let date = new Date(employeeBirthday);
@@ -62,7 +68,6 @@ export const ChangeEmployee = () => {
     let formattedDate = day + "-" + month + "-" + year;
     let birthDate = formattedDate.split("-").join(".");
 
-    console.log(birthDate);
     try {
       await changeEmployee({
         id: currentId.currentId,
@@ -72,14 +77,26 @@ export const ChangeEmployee = () => {
         phone: employeePhone,
         birthday: birthDate,
       });
+
+      dispatch(
+        updateEmployee({
+          id: currentId.currentId,
+          name: employeeName,
+          isArchive: employeeInArchive,
+          role: employeeRole,
+          phone: employeePhone,
+          birthday: birthDate,
+        })
+      );
+
       setIsChanged(false);
-      navigate("/");
       refetch();
+      currentEmployeeRefetch();
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
   };
-  console.log(employeeRole);
 
   return (
     <div className="modal">

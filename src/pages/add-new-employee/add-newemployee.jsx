@@ -4,11 +4,14 @@ import {
   useAddEmployeeMutation,
   useGetAllEmployeesQuery,
 } from "../../services/api";
+import { useDispatch } from "react-redux";
+import { updateNewEmployee } from "../../services/slices";
 
 export const AddNewEmployee = () => {
   const navigate = useNavigate();
   const [addEmployee, { isLoading, error }] = useAddEmployeeMutation();
   const { refetch } = useGetAllEmployeesQuery();
+  const dispatch = useDispatch();
   const {
     register,
     reset,
@@ -33,16 +36,19 @@ export const AddNewEmployee = () => {
     let birthDate = formattedDate.split("-").join(".");
 
     try {
-      await addEmployee({
+      const newEmployee = await addEmployee({
         name: employeeData.name,
         isArchive: employeeData.inArchive,
         role: employeeData.role,
         phone: employeeData.phone,
         birthday: birthDate,
-      });
+      }).unwrap();
+      
+      dispatch(updateNewEmployee(newEmployee));
+
+      refetch();
       navigate("/");
       reset();
-      refetch();
     } catch (error) {
       console.log(error);
     }

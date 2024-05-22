@@ -91,6 +91,21 @@ export const employeesSlice = createSlice({
         state.filteredList = state.employeesList;
       }
     },
+    updateEmployee: (state, action) => {
+      const { id, name, isArchive, role, phone, birthday } = action.payload;
+      const index = state.filteredList.findIndex((emp) => emp.id === id);
+      state.filteredList[index] = {
+        id,
+        name,
+        isArchive,
+        role,
+        phone,
+        birthday,
+      };
+    },
+    updateNewEmployee: (state, action) => {
+      state.filteredList.push(action.payload);
+    },
   },
 });
 
@@ -106,5 +121,7 @@ export const {
   addRole,
   removeRole,
   getFilteredListByRole,
+  updateEmployee,
+  updateNewEmployee,
 } = employeesSlice.actions;
 export default employeesSlice.reducer;
