@@ -3,8 +3,8 @@
     {
       "id": "1",
       "name": "Илья Емельянов",
-      "isArchive": false,
-      "role": "driver",
+      "isArchive": true,
+      "role": "waiter",
       "phone": "+7 (883) 508-3269",
       "birthday": "12.02.1982"
     },
@@ -100,7 +100,7 @@
       "id": "13",
       "name": "Фёдор Веселов",
       "isArchive": true,
-      "role": "waiter",
+      "role": "driver",
       "phone": "+7 (951) 517-3787",
       "birthday": "16.12.1972"
     },
@@ -138,19 +138,27 @@
     },
     {
       "id": "0880",
-      "name": "Александр Шубин",
+      "name": "Александр Кудлаев",
       "isArchive": false,
-      "role": "driver",
-      "phone": "+7 (999) 555-4444",
-      "birthday": "05.03.2010"
+      "role": "waiter",
+      "phone": "+7 (999) 555-7777",
+      "birthday": "05.03.1991"
     },
     {
       "id": "d228",
-      "name": "Олег Ермаков",
+      "name": "Ольга Ермакова",
+      "isArchive": false,
+      "role": "waiter",
+      "phone": "+7 (981) 877-5555",
+      "birthday": "22.11.2012"
+    },
+    {
+      "id": "398b",
+      "name": "Иван Виноградов",
       "isArchive": true,
-      "role": "cook",
-      "phone": "+7 (981) 877-3333",
-      "birthday": "21.11.2012"
+      "role": "driver",
+      "phone": "+7 (911) 111-2222",
+      "birthday": "01.10.1978"
     }
   ]
 }
