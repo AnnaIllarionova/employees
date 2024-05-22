@@ -52,6 +52,7 @@ body {
   align-items: center;
   padding: 10px;
   font-size: 18px;
+  width: auto;
 }
 .employee:hover {
   transform: scale(1.02);
@@ -84,9 +85,12 @@ body {
 
 .filters {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
-  gap: 30px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  row-gap: 10px;
   margin: 20px 0px;
 }
 .filters__title {
@@ -260,4 +264,92 @@ body {
 .modal__button:hover {
   cursor: pointer;
   background-color: rgb(53, 43, 243);
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .employee {
+    font-size: 14px;
+  }
+  .employee__name {
+    min-width: 180px;
+  }
+  .employee__phone {
+    width: 150px;
+  }
+  .main__add {
+    font-size: 16px;
+  }
+  .filters {
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+  }
+  .filters__title {
+    font-size: 20px;
+  }
+  .filters__button {
+    font-size: 12px;
+    padding: 5px 8px;
+    width: 125px;
+  }
+  .filters__input + label::before {
+    width: 15px;
+    height: 15px;
+  }
+  .filters__box {
+    width: 125px;
+  }
+  .filters__box_item {
+    font-size: 14px;
+  }
+  .modal__window {
+    left: calc(50% - 200px);
+  }
+}
+@media (max-width: 767px) {
+  .employee {
+    font-size: 14px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .employee__name {
+    min-width: 180px;
+  }
+  .employee__phone {
+    width: 150px;
+    text-align: left;
+  }
+  .employee__role {
+    text-align: left;
+  }
+  .main__add {
+    font-size: 14px;
+  }
+  .filters {
+    flex-direction: column;
+  }
+  .filters__title {
+    font-size: 20px;
+  }
+  .filters__button {
+    font-size: 12px;
+  }
+  .filters__input + label::before {
+    width: 15px;
+    height: 15px;
+  }
+  .filters__box {
+    width: 145px;
+  }
+  .filters__box_item {
+    font-size: 14px;
+  }
+  .modal__window {
+    left: 0;
+    top: 0;
+    width: auto;
+    height: 100%;
+  }
+  .modal__input {
+    font-size: 12px;
+  }
 }/*# sourceMappingURL=App.css.map */

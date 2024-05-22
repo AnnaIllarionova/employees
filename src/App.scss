@@ -55,6 +55,7 @@ body {
   align-items: center;
   padding: 10px;
   font-size: 18px;
+  width: auto;
 
   &:hover {
     transform: scale(1.02);
@@ -94,9 +95,11 @@ body {
 
 .filters {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
-  gap: 30px;
+  column-gap: 30px;
+  row-gap: 10px;
   margin: 20px 0px;
 
   &__title {
@@ -294,6 +297,112 @@ body {
     &:hover {
       cursor: pointer;
       background-color: rgb(53, 43, 243);
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .employee {
+    font-size: 14px;
+    &__name {
+      min-width: 180px;
+    }
+    &__phone {
+      width: 150px;
+    }
+  }
+  .main {
+    &__add {
+      font-size: 16px;
+    }
+  }
+
+  .filters {
+    column-gap: 10px;
+
+    &__title {
+      font-size: 20px;
+    }
+    &__button {
+      font-size: 12px;
+      padding: 5px 8px;
+      width: 125px;
+    }
+    &__input + label::before {
+      width: 15px;
+      height: 15px;
+    }
+    &__box {
+      width: 125px;
+
+      &_item {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .modal {
+    &__window {
+      left: calc(50% - 200px);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .employee {
+    font-size: 14px;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__name {
+      min-width: 180px;
+    }
+    &__phone {
+      width: 150px;
+      text-align: left;
+    }
+    &__role {
+      text-align: left;
+    }
+  }
+
+  .main {
+    &__add {
+      font-size: 14px;
+    }
+  }
+
+  .filters {
+    flex-direction: column;
+
+    &__title {
+      font-size: 20px;
+    }
+    &__button {
+      font-size: 12px;
+    }
+    &__input + label::before {
+      width: 15px;
+      height: 15px;
+    }
+    &__box {
+      width: 145px;
+
+      &_item {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .modal {
+    &__window {
+      left: 0;
+      top: 0;
+      width: auto;
+      height: 100%;
+    }
+    &__input {
+      font-size: 12px;
     }
   }
 }

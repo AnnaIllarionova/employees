@@ -5,7 +5,6 @@ import { useGetAllEmployeesQuery } from "../../services/api";
 
 export const MainPage = () => {
   const { data: employeesData, isLoading, error } = useGetAllEmployeesQuery();
-  console.log(employeesData);
   return (
     <div className="main">
       <h1 className="main__title">Список сотрудников компании</h1>

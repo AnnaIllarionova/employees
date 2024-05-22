@@ -1,11 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useAddEmployeeMutation, useGetAllEmployeesQuery } from "../../services/api";
+import {
+  useAddEmployeeMutation,
+  useGetAllEmployeesQuery,
+} from "../../services/api";
 
 export const AddNewEmployee = () => {
   const navigate = useNavigate();
   const [addEmployee, { isLoading, error }] = useAddEmployeeMutation();
-  const {refetch} = useGetAllEmployeesQuery();
+  const { refetch } = useGetAllEmployeesQuery();
   const {
     register,
     reset,
@@ -29,7 +32,6 @@ export const AddNewEmployee = () => {
     let formattedDate = day + "-" + month + "-" + year;
     let birthDate = formattedDate.split("-").join(".");
 
-    console.log(employeeData);
     try {
       await addEmployee({
         name: employeeData.name,
