@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useGetAllEmployeesQuery } from "../../services/api";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -16,7 +16,12 @@ import {
 } from "../../services/slices";
 
 export const Filters = () => {
-  const { data } = useGetAllEmployeesQuery();
+  const { data, refetch} = useGetAllEmployeesQuery();
+
+  useEffect(() => {
+    refetch();
+  }, [refetch]);
+  
   const dispatch = useDispatch();
   const [isNameClicked, setIsNameClicked] = useState(false);
   const [isBirthClicked, setIsBirthClicked] = useState(false);

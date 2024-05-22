@@ -5,7 +5,7 @@
       "name": "Илья Емельянов",
       "isArchive": true,
       "role": "waiter",
-      "phone": "+7 (883) 508-3269",
+      "phone": "+7 (883) 508-3270",
       "birthday": "12.02.1982"
     },
     {
@@ -141,7 +141,7 @@
       "name": "Александр Кудлаев",
       "isArchive": false,
       "role": "waiter",
-      "phone": "+7 (999) 555-7777",
+      "phone": "+7 (999) 555-7788",
       "birthday": "05.03.1991"
     },
     {
@@ -149,16 +149,64 @@
       "name": "Ольга Ермакова",
       "isArchive": false,
       "role": "waiter",
-      "phone": "+7 (981) 877-5555",
-      "birthday": "22.11.2012"
+      "phone": "+7 (981) 877-5546",
+      "birthday": "22.11.2010"
     },
     {
       "id": "398b",
       "name": "Иван Виноградов",
+      "isArchive": false,
+      "role": "driver",
+      "phone": "+7 (911) 111-2200",
+      "birthday": "01.10.1978"
+    },
+    {
+      "id": "f59d",
+      "name": "Георгий Светлов",
+      "isArchive": false,
+      "role": "driver",
+      "phone": "+7 (888) 555-4747",
+      "birthday": "31.05.2013"
+    },
+    {
+      "id": "b6f7",
+      "name": "Олег Ермаков",
+      "isArchive": true,
+      "role": "cook",
+      "phone": "+7 (999) 666-2322",
+      "birthday": "05.01.2014"
+    },
+    {
+      "id": "3bd6",
+      "name": "Александр Кудлаев",
       "isArchive": true,
       "role": "driver",
-      "phone": "+7 (911) 111-2222",
-      "birthday": "01.10.1978"
+      "phone": "+7(911)036-04-78",
+      "birthday": "02.05.2024"
+    },
+    {
+      "id": "b482",
+      "name": "Анастасия Дзюрич",
+      "isArchive": false,
+      "role": "driver",
+      "phone": "+7 (905) 656-8989",
+      "birthday": "24.04.1998"
+    },
+    {
+      "id": "ce06",
+      "name": "Ирина Ляшенко",
+      "isArchive": false,
+      "role": "waiter",
+      "phone": "+7 (883) 508-3268",
+      "birthday": "23.06.2016"
+    },
+    {
+      "id": "ee60",
+      "name": "Алла Прасова",
+      "isArchive": true,
+      "role": "cook",
+      "phone": "+7 (911) 111-9999",
+      "birthday": "02.02.2006"
     }
   ]
 }
